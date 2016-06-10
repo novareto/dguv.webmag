@@ -1,0 +1,7 @@
+<div tal:define="eventlist shard.banner()">
+  <h3>Termine</h3>
+  <div class="eventlist" tal:repeat="event eventlist">
+    <h3 tal:content="event.get('date')"/>
+    <small tal:content="event.get('eventtext')"/>
+  </div>
+</div>

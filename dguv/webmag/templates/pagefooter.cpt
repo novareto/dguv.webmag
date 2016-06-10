@@ -1,0 +1,13 @@
+<footer class="footer">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="text-muted description_content">© Deutsche Gesetzliche Unfallversicherung</li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="col-sm-2"><a href="#">
+	<img style=padding-top:10px; class="img-responsive"
+	     src="/++resource++dguv.webmag/assets/img/dguv-logo.png"></a>
+      </li>
+    </ul>
+  </div>
+</footer>

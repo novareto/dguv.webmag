@@ -1,0 +1,8 @@
+<div tal:define="banner shard.banner()" tal:attributes="class shard.css">
+  <a href="" tal:attributes="href banner.get('url')"
+     class="description-content">
+  <h3 tal:content="banner.get('subject')"/>
+  <span tal:condition="banner.get('newsrichtext')"
+	tal:replace="structure banner.get('newsrichtext')"/>
+  </a>
+</div>

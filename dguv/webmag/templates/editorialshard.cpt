@@ -1,0 +1,25 @@
+<div tal:define="banner shard.banner()">
+  <div class="card-portlet-teaser card-hover">
+    <div class="">  
+      <a class="" tal:attributes="href banner.get('url')">
+            <div class="media-body">
+              <h1 class="media-heading text-uppercase" tal:content="banner.get('subject')">Editorial</h1>
+              <p class="subtitle" tal:content="banner.get('newstext')"><i class="fa fa-angle-right"></i></p>
+            </div>
+            <div class="media-right"><img tal:attributes="src banner.get('banner_image')"></div>
+            <p class="text-right">
+	      <cite tal:content="banner.get('newstitle')"></cite>
+	    </p>
+            <blockquote tal:condition="banner.get('newsrichtext')" tal:content="structure banner.get('newsrichtext')"></blockquote>
+      </a>
+    </div>
+  </div>
+  <div class="card-portlet-teaser card-hover">
+        <a class="" href="article-02.html"></a>
+        <ul class="list-unstyled"><a class="" href="article-02.html"></a>
+          <li class="twitter"><a class="" href="article-02.html"><i class="fa fa-twitter" style="color:#2DCFFA;font-size:28px;padding-bottom: 15px;"></i></a><a href="" style="font-weight: bold;font-size:24px;">@DGUVKompakt</a></li>
+            <li>Nachrichten live aus der Redaktion: </li>
+            <li><a class="internal-link" href="" style="color:#093999;"><strong>www.twitter.com/DGUVKompakt</strong></a></li>
+          </ul>          
+  </div>
+</div>
