@@ -25,7 +25,10 @@ setup(name='dguv.webmag',
           'setuptools',
           'uvc.api[plone]',
           'collective.behavior.banner',
-          # -*- Extra requirements: -*-
+          'collective.prettydate',
+          'tweepy',
+          'python-twitter',
+          'twitter-text-python',
       ],
       entry_points={
          'z3c.autoinclude.plugin': 'target=plone', 

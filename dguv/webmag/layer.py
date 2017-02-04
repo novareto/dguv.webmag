@@ -22,6 +22,7 @@ class IAnonymousLayer(IBrowserRequest):
 
 
 def switch_skin(content, event):
+    print "IA AM CALLED FORM", content
     site = getSite()
     request = event.request
     if '__ac' not in request.get('HTTP_COOKIE', ''):

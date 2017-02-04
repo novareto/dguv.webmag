@@ -1,81 +1,98 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-    <div class="wrapper-header">
-      <span class="col-sm-12 col-md-8" style="margin-top:10px;">
-	<p>Nachrichten der Deutschen Gesetzlichen Unfallversicherung</p>
-      </span>
-      <div class="pull-right">
-        <ul class="list-inline">
-          <li style="padding-top:10px;">
-	    <a href="www.dguv.de"><img style="width: 120px;"
-	    src="assets/img/Logo-DGUV-RGB-short.svg"
-	    alt="Homepage – DGUV" title="Homepage – DGUV" /></a>
-	  </li>
-        </ul>
-      </div>
-      <div class="col-sm-8 col-md-8">
-        <div class="row flexbox">
-	  <div class="navbar-header">
-            <ul class="list-inline">
-              <li>
-		<a class="" href="#"><img style="margin-top:-14px;"
-		src="/++resource++dguv.webmag/assets/img/dguv-kompakt-logo.png" /></a>
-	      </li>
-              <li style="vertical-align:top;color:#093999;"><strong>März 2016</strong></li>
-            </ul>
-	  </div>
+    <div class="wrapper-header" style="padding-top:10px;">
+      
+      <div class="col-md-12">
+	
+        <div class="col-sm-4 col-xs-12 col-sm-push-8">
+          <ul class="list-inline header-logo">
+            <li>
+	      <a target="_blank" href="http://www.dguv.de"><img class="main-logo" style="max-width:100%"
+		     alt="Homepage – DGUV" title="Homepage – DGUV"
+		     tal:attributes="src string:/++resource++dguv.webmag/assets/img/Logo-DGUV-RGB.png" /></a>
+	    </li>
+          </ul>
         </div>
+	
+        <div class="col-sm-8 col-xs-12 col-sm-pull-4">
+          <span class="" style="margin-top:10px;">
+	  <p>Nachrichten der Deutschen Gesetzlichen Unfallversicherung</p></span>
+          <div class="row flexbox">
+            <div class="navbar-header">
+              <ul class="list-inline">
+		<li>
+		  <a class="" href="" tal:attributes="href view.application_url()">
+		    <img style="margin-top:-14px;max-width:100%;" 
+                         tal:attributes="src string:/++resource++dguv.webmag/assets/img/dguv-kompakt-logo.png" />
+		  </a>
+		</li>
+		<li style="vertical-align:top;color:#093999;">
+		  <strong tal:content="context.__parent__.Description()" />
+		</li>
+              </ul>
+            </div>
+          </div>
+	</div>
       </div>
       
-      <div class="col-sm-12 col-md-4 ivz-navi" style="padding-right: 0 !important"> 
-	<div class="pull-right">
-	  <ul class="list-inline" tal:define="np viewletmanager.nextprevious()">
-            <li><a class="btn btn-primary" href="#contact">Archiv</a></li>
-            <li><a class="btn btn-primary" href="#contact">Inhalt</a></li>
-            <li>
+      <div class="col-md-12 ivz-navi"> 
+	<div class="">
+	  <ul class="list-inline"
+	      tal:define="np viewletmanager.nextprevious()">
+
+            <li> <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" 
+                 aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-bars"></i> Menü</button> </li>
+
+	    <li>
 	      <a class="btn btn-primary"
-		 tal:condition="np['previous']"
+		 tal:attributes="href view.application_url()">
+		<i class="fa fa-home" aria-hidden="true"></i>
+	      </a>
+	    </li>
+            <li><a class="btn btn-primary" href="http://www.dguv.de/de/mediencenter/dguv-kompakt/index.jsp">Archiv</a></li>
+            <li tal:condition="np['previous']">
+	      <a class="btn btn-primary"
 		 tal:attributes="href np['previous'].url"
 		 ><i class="fa fa-angle-left"></i> zurück</a>
 	    </li>
-            <li>
-	      <a class="btn btn-primary"
-		 tal:condition="np['next']"
-		 tal:attributes="href np['next'].url"
-		 >weiter <i class="fa fa-angle-right"></i></a>
-	    </li>
-            <li> <button class="btn btn-primary collapsed" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"> <i class="fa fa-bars"></i> </button> </li>
-          </ul>
-	</div>
-      </div>
-      <div class="collapse ivz" style="width:100%;float:left;" id="collapseExample" aria-expanded="false"> 
-	<div class="col-sm-4"> 
-	  <ul class="list-unstyled">
-	    <h2>Ausgabe Juni 2016</h2>
-	    <li><a href="">Neues Positionspapier:Prävention der Zukunft <i class="fa fa-angle-right"></i></a></li>
-	    <li>
-	      <a href="">Die neue BG Verkehr: Fusion zur neuen Berufsgenossenschaft
-	      <i class="fa fa-angle-right"></i></a>
-	    </li>
-	  </ul>
-	</div> 
-	<div class="col-sm-4"> 
-	  <ul class="list-unstyled">
-	    <h2>Top Thema</h2>
-	    <li><a href="">Interview <i class="fa fa-angle-right"></i></a></li>
-	    <li><a href="">Im Fokus <i class="fa fa-angle-right"></i></a></li>
-	  </ul>
-	</div>
-	<div class="col-sm-4"> 
-	  <ul class="list-unstyled">
-	    <h2>Kurzmledungen</h2>
-	    <li><a href="">Medienecke <i class="fa fa-angle-right"></i></a></li>
-	    <li><a href="">Termine <i class="fa fa-angle-right"></i></a></li>
-	    <li><a href="">Event <i class="fa fa-angle-right"></i></a></li>
-	    <li><a href="kontakt.html">Kontakt <i class="fa fa-angle-right"></i></a></li>
+          <li tal:condition="np['next']">
+	    <a class="btn btn-primary"
+	       tal:attributes="href np['next'].url"
+	       >weiter <i class="fa fa-angle-right"></i></a>
+	  </li>
 	  </ul>
 	</div>
       </div>
+    
+      <div class="collapse ivz" style="width:100%;float:left;" id="collapseExample" aria-expanded="false">
+	<div class="row"> 
+	  <div class="col-sm-12"> 
+	    <h4 tal:content="string:Ausgabe ${viewlet.ausgabe}">Ausgabe Juli/August 2016</h4>
+	  </div>
+	</div>
+	<div tal:repeat="group viewlet.doclist" class="col-sm-6">
+	  <ul class="list-unstyled">
+	    <li tal:repeat="entry group">
+	      <a href="" tal:attributes="href entry.get('url')">
+              <span tal:replace="entry.get('linktitle')" />
+	      <i class="fa fa-angle-right"></i>
+	      </a>
+	    </li>
+	  </ul>
+	</div>
+        <!--
+	<div class="col-sm-3"> 
+	  <ul class="list-unstyled">
+	    <li tal:repeat="brain viewlet.get_rubriken()">
+	      <a href="" tal:attributes="href brain.getURL()">
+		<span tal:replace="unicode(brain['Title'], 'utf-8')" />
+		<i class="fa fa-angle-right"></i>
+	      </a>
+	    </li>
+	  </ul>
+	</div>
+        -->
+      </div> <!-- END: collapse ivz -->
     </div><!-- END: wrapper-header -->
   </div><!-- END: container -->
 </nav>

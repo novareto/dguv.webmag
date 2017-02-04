@@ -45,10 +45,26 @@ template {
 a {
   background-color: transparent;
 }
+
 a:active,
-a:hover {
+a:hover,
+a:visited {
   outline: 0;
+  text-decoration: none;
 }
+
+div.footercard {
+  border-width: 0px 8px; 
+  border-color: white;
+  border-style: solid;
+  padding-left: 0px;
+}
+
+.discreet {
+  font-size: 80%;
+  color: #004994;
+}
+
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -193,7 +209,7 @@ th {
   }
   a,
   a:visited {
-    text-decoration: underline;
+    text-decoration: none;
   }
   a[href]:after {
     content: " (" attr(href) ")";
@@ -1253,11 +1269,11 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 20px;
+  font-size: 36px;
 }
 h2,
 .h2 {
-  font-size: 18px;
+  font-size: 30px;
 }
 h3,
 .h3 {
@@ -1265,7 +1281,7 @@ h3,
 }
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 22px;
 }
 h5,
 .h5 {
@@ -2431,6 +2447,9 @@ table th[class*="col-"] {
   min-height: 0.01%;
 }
 @media screen and (max-width: 767px) {
+   div.footercard {
+    border-width: 0 0;
+   }
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
@@ -3409,7 +3428,7 @@ fieldset[disabled] .btn-link {
 .btn-link:hover,
 .btn-link:focus {
   color: #051e51;
-  text-decoration: underline;
+  text-decoration: none;
   background-color: transparent;
 }
 .btn-link[disabled]:hover,
@@ -4147,22 +4166,28 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
+
 .navbar {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
+
 @media (min-width: 768px) {
   .navbar {
     border-radius: 0px;
   }
 }
+
 @media (min-width: 768px) {
   .navbar-header {
-    float: left;
+      float: left;
+      z-index: 99;
+      position: relative;
   }
 }
+
 .navbar-collapse {
   overflow-x: visible;
   padding-right: 15px;
@@ -6568,6 +6593,7 @@ button.close {
     display: inline-block !important;
   }
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   .visible-sm {
     display: block !important;
@@ -6767,6 +6793,21 @@ body > .inhalt-wrapper,
 body > .cards-wrapper {
   padding: 120px 15px 0;
 }
+.ivz-navi {
+  padding-left: 0 !important;
+}
+@media (max-width: 768px) {
+  .ivz-navi .list-inline > li {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .ivz-navi .list-inline > li {
+    padding-top: 5px;
+  }
+}
+
 .ivz {
   border-bottom: 6px solid #093999;
 }
@@ -6809,7 +6850,8 @@ body > .cards-wrapper {
   .media-right {
     display: block;
   }
-  .cards-wrapper {
+  .cards-wrapper,
+  .inhalt-wrapper {
     padding-top: 180px !important;
   }
 }
@@ -6869,6 +6911,18 @@ h1.header-title {
 .wrapper-header {
   border-top: 4px solid #093999;
 }
+.header-logo {
+  float: right;
+}
+@media (max-width: 768px) {
+  .header-logo {
+    float: none;
+  }
+}
+.main-logo {
+  width: 100%;
+  padding-top: 24px;
+}
 div.card-main {
   position: relative;
 }
@@ -6899,13 +6953,10 @@ div.description {
   bottom: 0px;
   left: 0px;
   width: 100%;
-  background-color: white;
   color: #093999;
-  opacity: 0.6;
-  /* transparency */
-  filter: alpha(opacity=60);
-  /* IE transparency */
   padding: 10px 10px 0 10px;
+  background: url("assets/img/card-bg.png") repeat-x;
+  background-size: cover;
 }
 a.description-content {
   color: #000;
@@ -6941,6 +6992,7 @@ a.description-content {
 .card-portlet p,
 .card-portlet h1,
 .card-portlet h2,
+.card-portlet h3,
 .card-portlet blockquote,
 .card-portlet ul {
   padding: 10px 10px 0 10px;
@@ -6952,7 +7004,6 @@ a.description-content {
 .card-portlet h1.media-heading {
   color: #093999;
 }
-
 .card-grau {
   background-color: #F1F1F1;
 }
@@ -6969,7 +7020,7 @@ a.description-content {
   /* IE6-9 */
 }
 .card-blue {
-  background-color: rgba(0, 149, 219, 0.1);
+  background-color: rgba(0, 140, 142, 0.4);
 }
 .card-blue:hover {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e5f4fb+0,cceaf8+100 */
@@ -7028,6 +7079,27 @@ a.description-content {
   -webkit-box-shadow: inset #B3B3B3 0 -1px 0 0;
   box-shadow: inset #B3B3B3 0 -1px 0 0;
 }
+@media (max-width: 768px) {
+  .card-portlet {
+    border-bottom: 8px solid white;
+  }
+}
+.teaser-hover {
+  cursor: pointer;
+  border-bottom: 1px solid #FFF;
+  -moz-box-shadow: inset #B3B3B3 0 -1px 0 0;
+  -webkit-box-shadow: inset #B3B3B3 0 -1px 0 0;
+  box-shadow: inset #B3B3B3 0 -1px 0 0;
+}
+.teaser-hover p {
+  margin-bottom: 21px;
+}
+.teaser-hover:last-child {
+  border-bottom: 0px solid #FFF;
+  -moz-box-shadow: inset #B3B3B3 0 0 0 0;
+  -webkit-box-shadow: inset #B3B3B3 0 0 0 0;
+  box-shadow: inset #B3B3B3 0 0 0 0;
+}
 .card-portlet-teaser:hover,
 .card-hover:hover {
   background: #f6f6f6;
@@ -7041,6 +7113,9 @@ a.description-content {
 .line-cyan {
   background-color: #0095db;
 }
+.line-editorial {
+  background-color: #2dcffa;
+}
 .line-yellow {
   background-color: #F8FF02;
 }
@@ -7050,11 +7125,17 @@ a.description-content {
 .row-bottom-margin {
   margin-bottom: 8px;
 }
+.category-border {
+  height: 6px;
+  width: 80px;
+}
 .title-border {
   height: 6px;
   width: 80px;
   margin-left: 10px;
-  padding: 0 !important;
+}
+.twitter-date {
+  color: #777777;
 }
 .col-sm-3,
 .col-sm-4,
@@ -7072,27 +7153,14 @@ a.description-content {
 .header-title {
   font-size: 4em;
 }
-.cards-wrapper h1 {
+p {
+  font-size: 18px;
+}
+.media-body h1 {
+  color: #093999;
+}
+.cards-wrapper h3 {
   margin-top: 0;
-}
-.two-columns {
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  columns: 2;
-  -webkit-column-gap: 20px;
-  -moz-column-gap: 20px;
-  column-gap: 20px;
-}
-.one-span {
-  -webkit-column-span: all;
-  column-span: all;
-}
-@media (max-width: 768px) {
-  .two-columns {
-    -webkit-columns: 1;
-    -moz-columns: 1;
-    columns: 1;
-  }
 }
 dt,
 strong {
@@ -9198,4 +9266,10 @@ strong {
 }
 .fa-percent:before {
   content: "\f295";
+}
+.cardhead {
+  margin-top:10px !important;
+}
+.sharedoc {
+  margin-top:20px !important;
 }

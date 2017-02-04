@@ -13,6 +13,36 @@ from uvc.api import api
 from uvc.shards.components import ShardsAsViews
 from uvc.shards.interface import IShardedView
 from zope import interface
+from zope.component import getMultiAdapter
+from plone.app.folder.nextprevious import NextPrevious
+from Products.CMFCore.interfaces import IContentish
+
+
+class NPWebMag(NextPrevious):
+
+   def getData(self, obj):
+        """ return the expected mapping, see `INextPreviousProvider` """
+        gNN = getattr(obj, 'excludenextprev', False)
+        if gNN:
+            return None
+        if not self.security.checkPermission('View', obj):
+            return None
+        elif not IContentish.providedBy(obj):
+            # do not return a not contentish object
+            # such as a local workflow policy for example (#11234)
+            return None
+
+        ptype = obj.portal_type
+        url = obj.absolute_url()
+        if ptype in self.vat:       # "use view action in listings"
+            url += '/view'
+        return dict(
+            id=obj.getId(),
+            url=url,
+            title=obj.Title(),
+            description=obj.Description(),
+            portal_type=ptype
+        ) 
 
 
 api.templatedir('templates')
@@ -31,7 +61,10 @@ class PageTop(api.ViewletManager):
 
     def nextprevious(self):
         portal = ploneapi.portal.get()
-        nextprev = INextPreviousProvider(portal['web-mag'])
+        pathroot = self.context.absolute_url_path().split('/')[1]
+        #nextprev = INextPreviousProvider(portal['dguv-kompakt-aktuell'])
+        #nextprev = NPWebMag(portal['dguv-kompakt-aktuell'])
+        nextprev = NPWebMag(portal[pathroot])
         return {'next': nextprev.getNextItem(self.context),
                 'previous': nextprev.getPreviousItem(self.context)}
     
@@ -50,3 +83,9 @@ class BSPage(api.Page):
 
     def _get_layout(self):
         return self.layoutClass(self.request, self.context)
+
+    def application_url(self):
+        context = self.context.aq_inner
+        portal_state = getMultiAdapter(
+            (context, self.request), name=u'plone_portal_state')
+        return portal_state.portal_url()

@@ -58,13 +58,13 @@
   <div class="row row-bottom-margin between-sm">
     <div class="col-xs-6 col-sm-3 cards card-grau">
       <a class="description-content" href="article-01.html">
-        <h1 class="text-uppercase">zum Thema</h1>
+        <h3 class="text-uppercase">zum Thema</h3>
         <div class=""><p class="title-border line-cyan"></p></div>
         <!-- Optional: clear the XS cols if their content doesn't match in height -->
 	<div class="clearfix"></div>
 	<div class="media">  
           <div class="media-body">
-            <h4 class="media-heading">Standards für die Digitalisierung</h4>
+            <h3 class="media-heading">Standards für die Digitalisierung</h3>
             <p>
 	    Strategien für den EU-Binnenmarkt</p>
           </div>
@@ -75,13 +75,13 @@
     <!-- CARD:2 -->  
     <div class="col-xs-6 col-sm-3 cards card-blue">
       <a class="description-content" href="kontakt.html">
-        <h1 class="text-uppercase">Zahl des Monats</h1>
+        <h3 class="text-uppercase">Zahl des Monats</h3>
         <div class=""><p class="title-border line-blue"></p></div>
         <!-- Optional: clear the XS cols if their content doesn't match in height -->
 	<div class="clearfix"></div>
 	<div class="media">  
           <div class="media-body">
-            <h4 class="media-heading">4.003.444</h4>
+            <h3 class="media-heading">4.003.444</h3>
             <p>
 	      … waren 2014 bei den Mitgliedern der DGUV
 	      versichert. Davon entfielen 3,3 Mio. auf den
@@ -98,13 +98,13 @@
     <!-- CARD:3 -->
     <div class="col-xs-12 col-sm-6 cards card-gelb">
       <a class="description-content" href="article-04.html">
-	<h1 class="text-uppercase">Interview</h1>
+	<h3 class="text-uppercase">Interview</h3>
 	<div class=""><p class="title-border line-yellow"></p></div>
         <!-- Optional: clear the XS cols if their content doesn't match in height -->
 	<div class="clearfix"></div>
 	<div class="media">
           <div class="media-body">
-            <h4 class="media-heading">„Es müssen sehr bald zukunftsfähige Lösungen entwickelt werden“</h4>
+            <h3 class="media-heading">„Es müssen sehr bald zukunftsfähige Lösungen entwickelt werden“</h3>
             <p>Im Gespräch mit Dr. Joachim Breuer, Hauptgeschäftsführer der DGUV.</p>
           </div>
           <div class="media-right">
@@ -120,14 +120,14 @@
     <!-- CARD:1 --> 
     <div class="col-xs-12 col-sm-6 cards card-orange">
       <a class="description-content" href="article-03.html">
-	<h1 class="text-uppercase">Meldungen</h1>
+	<h3 class="text-uppercase">Meldungen</h3>
 	<div class=""><p class="title-border line-orange"></p></div>
         <!-- Optional: clear the XS cols if their content doesn't match in height -->
 	<div class="clearfix"></div>
 	<div class="media">  
           <div class="media-body">
-            <h4 class="media-heading">Potenziale 
-            der Vielfalt</h4>
+            <h3 class="media-heading">Potenziale 
+            der Vielfalt</h3>
             <p>Die „iga.Fakten 8“ der Initiative Gesundheit und Arbeit (iga) zeigen, worauf es bei einem diversitätsorientierten betrieblichen Gesundheitsmanagement ankommt. </p>
           </div>
           <div class="media-right">
@@ -141,11 +141,11 @@
     <!-- CARD:2 --> 
     <div class="col-xs-6 col-sm-3 cards card-orange">
       <a class="description-content" href="article-03.html">
-        <h1 class="text-uppercase">Meldungen</h1>
+        <h3 class="text-uppercase">Meldungen</h3>
         <div class=""><p class="title-border line-orange"></p></div>
         <!-- Optional: clear the XS cols if their content doesn't match in height -->
 	<div class="clearfix"></div>
-	<h4 class="media-heading">Erfolgreich abgeschlossen</h4>
+	<h3 class="media-heading">Erfolgreich abgeschlossen</h3>
 	<p>
 	  Die Präventionskampagne „Denk an mich. Dein Rücken“ wurde im
 	  Dezember 2015 beendet. Drei Jahre warben
@@ -160,7 +160,7 @@
     <!-- CARD:3 --> 
     <div class="col-xs-6 col-sm-3 cards card-blue"> 
       <a class="description-content" href="kontakt.html">    
-        <h1 class="text-uppercase">Termine</h1>
+        <h3 class="text-uppercase">Termine</h3>
         <div class=""><p class="title-border line-blue"></p></div>
       </a>
       <!-- Optional: clear the XS cols if their content doesn't match in height -->

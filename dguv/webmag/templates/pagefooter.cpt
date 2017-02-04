@@ -1,10 +1,12 @@
 <footer class="footer">
   <div class="container">
-    <ul class="nav navbar-nav">
-      <li class="text-muted description_content">© Deutsche Gesetzliche Unfallversicherung</li>
+    <ul class="navbar-nav list-inline">
+      <li class="text-muted description_content">&copy; Deutsche Gesetzliche Unfallversicherung |</li>
+      <li class="text-muted"><a target="_blank" href="http://www.dguv.de/de/wir-ueber-uns/impressum/index.jsp">Impressum</a> |</li>
+      <li class="text-muted"><a tal:attributes="href viewlet.rechteurl">Bildnachweise</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="col-sm-2"><a href="#">
+      <li class=""><a target="_blank" href="http://www.dguv.de">
 	<img style=padding-top:10px; class="img-responsive"
 	     src="/++resource++dguv.webmag/assets/img/dguv-logo.png"></a>
       </li>

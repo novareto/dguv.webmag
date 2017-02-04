@@ -8,27 +8,13 @@
   </div>
 </div>
 <div class="row row-bottom-margin between-sm">
-  
-  <div tal:define="document string:mobiles-arbeiten-braucht-klare-regeln;
-		   class string:card-grau col-sm-3"
-       tal:replace="structure shard:richtext" />
-
-  <div class="col-sm-3" >
-    <div tal:define="document string:1.072" tal:content="structure shard:document"> </div>
-  </div>
-  <div class="col-sm-6" >
-    <div tal:define="document string:arbeitsunfaelle-in-2015-gesunken" tal:content="structure shard:richtext"> </div>
-  </div>
+  <div class="card-grau col-sm-3 col-xs-6 cards" tal:define="document string:mobiles-arbeiten-braucht-klare-regeln" tal:content="structure shard:richtext"> </div>
+  <div class="card-blue col-sm-3 cards" tal:define="document string:1.072" tal:content="structure shard:document"> </div>
+  <div class="card-gelb col-sm-6 cards" tal:define="document string:arbeitsunfaelle-in-2015-gesunken" tal:content="structure shard:richtext"> </div>
 </div>
 <div class="row row-bottom-margin between-sm">
-  <div class="col-sm-6">
-    <div tal:define="document string:schoene-neue-arbeitswelt" tal:content="structure shard:document"></div>
-  </div>
-  <div class="col-md-3">
-    <div tal:define="document string:thema-inklusion-informationsportal" tal:content="structure shard:richtext"></div>
-  </div>
-  <div class="col-sm-3">
-    <div tal:define="eventfolder string:termine" tal:content="structure shard:eventlist"></div>
-  </div>
+  <div class="card-orange col-sm-6 cards" tal:define="document string:schoene-neue-arbeitswelt" tal:content="structure shard:document"></div>
+  <div class="card-orange col-sm-3 cards" tal:define="document string:thema-inklusion-informationsportal" tal:content="structure shard:richtext"></div>
+  <div class="card-blue col-sm-3 cards" tal:define="eventfolder string:termine" tal:content="structure shard:eventlist"></div>
 </div>
 </div>

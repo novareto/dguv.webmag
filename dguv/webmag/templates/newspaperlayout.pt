@@ -5,12 +5,15 @@
       lang="en"
       i18n:domain="dguv.webmag">
   <head>
-      <link rel="stylesheet" type="text/css"
-	    tal:attributes="href string:/++resource++dguv.webmag/bootstrap/dist/css/bootstrap.min.css" />
-      <link rel="stylesheet" type="text/css"
-	    tal:attributes="href string:/++resource++dguv.webmag/site.css" />
-      <link rel="stylesheet" type="text/css"
-	    tal:attributes="href string:/++resource++dguv.webmag/flexboxgrid.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css"
+	  tal:attributes="href string:/++resource++dguv.webmag/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+	  tal:attributes="href string:/++resource++dguv.webmag/site.css" />
+    <link rel="stylesheet" type="text/css"
+	  tal:attributes="href string:/++resource++dguv.webmag/flexboxgrid.css" />
   </head>
   <body>
     <div>
