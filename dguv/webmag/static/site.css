@@ -6852,7 +6852,7 @@ body > .cards-wrapper {
   }
   .cards-wrapper,
   .inhalt-wrapper {
-    padding-top: 180px !important;
+    padding-top: 180px;
   }
 }
 .container .text-muted {
@@ -7083,6 +7083,13 @@ a.description-content {
   .card-portlet {
     border-bottom: 8px solid white;
   }
+  div.description {
+    position: relative;
+  }
+  .cards-wrapper,
+  .inhalt-wrapper {
+    padding-top: 0px;
+  } 
 }
 .teaser-hover {
   cursor: pointer;

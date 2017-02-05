@@ -10,6 +10,7 @@ from uvc.shards.components import ShardsAsViews
 from Products.CMFCore.utils import getToolByName
 from plone.memoize import ram
 from time import time
+from plone import api as ploneapi
 
 
 api.templatedir('templates')
@@ -56,7 +57,30 @@ class Bildrechte(Page):
         bildrechte.sort()
         self.bildrechte = bildrechte
 
+class Kompaktarchiv(Page):
+    api.context(Interface)
+    grok.layer(IAnonymousLayer)
 
+    def update(self):
+        folders = [u'dezember-2016',
+                   u'november-2016',
+                   u'oktober-2016',
+                   u'september-2016',
+                   ]
+        archiv = []
+        for i in folders:
+           portal = ploneapi.portal.get()
+           obj = getattr(portal, i)
+           magazin = {}
+           if obj:
+               magazin['title'] = obj.description
+               magazin['url'] = obj.absolute_url()+'/index.html/kompakttitelview'
+               magazin['imgurl'] = obj.absolute_url() + '/medien-dieser-ausgabe/titelbild/@@images/image/thumb'
+               print magazin['imgurl']
+               titelobj = getattr(obj, u'titelstory')
+               magazin['storytitle'] = titelobj.title
+               archiv.append(magazin)
+        self.archiv = archiv
 
 #class DocumentView(api.Page):
 #    api.implements(IShardedView)
