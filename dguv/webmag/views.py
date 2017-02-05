@@ -53,7 +53,8 @@ class Bildrechte(Page):
                 entry['title'] = obj.Description()
                 entry['url'] = obj.absolute_url() + '/@@images/image/thumb'
                 entry['rights'] = obj.Rights()
-                bildrechte.append(entry)
+                if not obj.id == u'titelbild':
+                    bildrechte.append(entry)
         bildrechte.sort()
         self.bildrechte = bildrechte
 
